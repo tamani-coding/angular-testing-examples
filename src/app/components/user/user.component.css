@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.item {
+  margin: 5px
+}

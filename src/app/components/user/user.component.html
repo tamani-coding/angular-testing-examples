@@ -1,0 +1,5 @@
+<div *ngIf="user" class="wrapper">
+  <div class="item">{{ user.name.last + ', '  + user.name.first }}</div>
+  <div class="item">{{ user.dob.age }}</div>
+  <div><img src="{{ user.picture.thumbnail }}"></div>
+</div>
