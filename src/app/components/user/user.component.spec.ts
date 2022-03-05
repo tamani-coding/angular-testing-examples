@@ -1,8 +1,9 @@
-import { Observable, of } from 'rxjs';
 import { UserService } from './../../services/user.service';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 
 import { UserComponent } from './user.component';
+import { of } from 'rxjs';
+import { By } from '@angular/platform-browser';
 
 describe('UserComponent', () => {
   let component: UserComponent;
@@ -37,13 +38,20 @@ describe('UserComponent', () => {
       .compileComponents();
   });
 
-  beforeEach(() => {
+  beforeEach(fakeAsync(() => {
     fixture = TestBed.createComponent(UserComponent);
+    tick(5)
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy();
+
+    fixture.detectChanges();
+    expect(fixture.debugElement.query(By.css('#wrapper'))).toBeTruthy();
+    expect(fixture.debugElement.query(By.css('#userName'))).toBeTruthy();
+    expect(fixture.debugElement.query(By.css('#age'))).toBeTruthy();
+    expect(fixture.debugElement.query(By.css('#picture'))).toBeTruthy();
   });
 });
