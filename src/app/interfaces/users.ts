@@ -3,27 +3,27 @@ export interface UsersResult {
 }
 
 export interface User {
-  gender: 'male' | 'female',
-  name: {
-    title: string,
-    first: string,
-    last: string
+  gender?: 'male' | 'female',
+  name?: {
+    title?: string,
+    first?: string,
+    last?: string
   },
-  location: {
-    street: {
-      number: number,
-      name: string
+  location?: {
+    street?: {
+      number?: number,
+      name?: string
     },
-    city: string,
-    state: string,
-    country: string,
-    postcode: number
+    city?: string,
+    state?: string,
+    country?: string,
+    postcode?: number
   },
-  email: string,
-  dob: {
-    age: number
+  email?: string,
+  dob?: {
+    age?: number
   },
-  picture: {
-    thumbnail: string
+  picture?: {
+    thumbnail?: string
   }
 }
