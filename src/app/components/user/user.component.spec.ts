@@ -5,7 +5,7 @@ import { UserComponent } from './user.component';
 import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
-describe('UserComponent', () => {
+fdescribe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
 
@@ -20,6 +20,12 @@ describe('UserComponent', () => {
               title: 'Mr',
               first: 'Peter',
               last: 'Parker'
+            },
+            dob: {
+              age: 25
+            },
+            picture: {
+              thumbnail: 'test'
             }
           }
         ]
@@ -50,8 +56,13 @@ describe('UserComponent', () => {
 
     fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('#wrapper'))).toBeTruthy();
+
     expect(fixture.debugElement.query(By.css('#userName'))).toBeTruthy();
+    expect(fixture.debugElement.query(By.css('#userName')).nativeNode.textContent).toBe('Peter Parker');
+
     expect(fixture.debugElement.query(By.css('#age'))).toBeTruthy();
+    expect(fixture.debugElement.query(By.css('#age')).nativeElement.textContent).toBe('25');
+
     expect(fixture.debugElement.query(By.css('#picture'))).toBeTruthy();
   });
 });
