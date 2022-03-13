@@ -5,7 +5,7 @@ import { UserComponent } from './user.component';
 import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
-fdescribe('UserComponent', () => {
+describe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
 
