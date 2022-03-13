@@ -44,14 +44,15 @@ describe('UserComponent', () => {
       .compileComponents();
   });
 
-  beforeEach(fakeAsync(() => {
+  beforeEach(() => {
     fixture = TestBed.createComponent(UserComponent);
-    tick(5)
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
-  it('should create', () => {
+  it('should create', fakeAsync(() => {
+    component.ngOnInit();
+    tick();
     expect(component).toBeTruthy();
 
     fixture.detectChanges();
@@ -64,5 +65,5 @@ describe('UserComponent', () => {
     expect(fixture.debugElement.query(By.css('#age')).nativeElement.textContent).toBe('25');
 
     expect(fixture.debugElement.query(By.css('#picture'))).toBeTruthy();
-  });
+  }));
 });
