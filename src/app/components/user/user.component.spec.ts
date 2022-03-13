@@ -53,9 +53,9 @@ describe('UserComponent', () => {
   it('should create', fakeAsync(() => {
     component.ngOnInit();
     tick();
+    fixture.detectChanges();
     expect(component).toBeTruthy();
 
-    fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('#wrapper'))).toBeTruthy();
 
     expect(fixture.debugElement.query(By.css('#userName'))).toBeTruthy();
